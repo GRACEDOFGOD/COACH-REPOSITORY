@@ -1,59 +1,76 @@
-# COACH-REPOSITORY
-<h1>JWipe - Disk Sanitization</h1>
+<!DOCTYPE html>
+<html lang="en"> 
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+  </head>
+  <body>
+    <h1 id="title">SURVEY FORM | NEW FOUNDATION ACADEMY</h1>
+    <p id="description" class="toptop">Thank you for helping us improve</p>
 
- ### [YouTube Demonstration](https://youtu.be/7eJexJVCqJo)
+    <!-- The form id was missing a closing quote -->
+    <form id="survey-form"> 
+     
+      <label id="name-label" for="name">
+        <b class="nf">Full Name</b>
+        <!-- 'for' attribute value 'name' should match input's 'name' attribute -->
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+      </label>
 
-<h2>Description</h2>
-Project consists of a simple PowerShell script that walks the user through "zeroing out" (wiping) any drives that are connected to the system. The utility allows you to select the target disk and choose the number of passes that are performed. The PowerShell script will configure a diskpart script file based on the user's selections and then launch Diskpart to perform the disk sanitization.
-<br />
+      <label class="nf" id="email-label" for="email">
+        <b>Email</b>
+        <!-- The 'for' attribute should be for 'email', not 'name' -->
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+      </label>
 
+      <label class="nf" id="number-label" for="number">
+        <b>Age (years)</b>
+        <!-- 'name' attribute added to identify this field -->
+        <input type="number" id="number" name="age" min="10" max="100" placeholder="Enter your age" required>
+      </label>
 
-<h2>Languages and Utilities Used</h2>
+      <label class="nf" for="role">
+        <b>Which role best describes you?</b>
+        <!-- Closing the select inside the label and fixing 'disabled' typo -->
+        <select id="dropdown" name="role" required>
+          <option disabled selected value>Select one option</option>
+          <option value="Student">Student</option>
+          <option value="Employed">Employed</option>
+          <option value="Self-employed">Self-employed</option>
+          <option value="Prefer not to say">Prefer not to say</option>
+        </select>
+      </label>
 
-- <b>PowerShell</b> 
-- <b>Diskpart</b>
+      <p class="nf">How likely are you to recommend us to a friend?</p>
+      <label class="b"> 
+        <input type="radio" name="recommend" value="definitely" required> Definitely
+      </label>
+      <label class="b"> 
+        <input type="radio" name="recommend" value="Not likely" required> Not likely
+      </label>
+      <label class="b"> 
+        <input type="radio" name="recommend" value="Not at all" required> Not at all
+      </label>
 
-<h2>Environments Used </h2>
+      <p>What do you love about our school?</p>
+      <label class="b">
+        <input type="checkbox" name="love" value="Teachers"> Teachers
+      </label>
+      <label class="b">
+        <input type="checkbox" name="love" value="Facilities"> Facilities
+      </label>
+      <label class="b">
+        <input type="checkbox" name="love" value="Curriculum"> Curriculum
+      </label>
+      <label class="b">
+        <input type="checkbox" name="love" value="Track record"> Track record
+      </label>
 
-- <b>Windows 10</b> (21H2)
+      <p>Anything you want us to improve on?</p>
+      <textarea id="comment" name="comment" rows="5" cols="25" placeholder="I would like the school to improve on..."></textarea>
 
-<h2>Program walk-through:</h2>
-
-<p align="center">
-Launch the utility: <br/>
-<img src="https://i.imgur.com/62TgaWL.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Select the disk:  <br/>
-<img src="https://i.imgur.com/tcTyMUE.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Enter the number of passes: <br/>
-<img src="https://i.imgur.com/nCIbXbg.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Confirm your selection:  <br/>
-<img src="https://i.imgur.com/cdFHBiU.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Wait for process to complete (may take some time):  <br/>
-<img src="https://i.imgur.com/JL945Ga.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Sanitization complete:  <br/>
-<img src="https://i.imgur.com/K71yaM2.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Observe the wiped disk:  <br/>
-<img src="https://i.imgur.com/AeZkvFQ.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-
-<!--
- ```diff
-- text in red
-+ text in green
-! text in orange
-# text in gray
-@@ text in purple (and bold)@@
-```
---!>
+      <!-- 'type' should be lowercase -->
+      <button type="submit" id="submit">Submit</button>
+    </form>
+  </body>
+</html>
